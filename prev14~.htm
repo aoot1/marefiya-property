@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marefiya Property | Buy, Sell & Rent</title>
+    <style>
+        body {
+            font-family: Arial black, sans-serif;
+            margin: 0;
+            background: #000;
+            color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .search-bar input,
+        .search-bar select {
+            padding: 10px;
+            font-size: 16px;
+            width: 180px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #0000FF;
+            color: #00FF00;
+            border: #FF0000;
+            cursor: pointer;
+        }
+         <style>
+    .property-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px; /* adjust gap between items */
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .property {
+        background: #1f1f1f;
+        width: calc(50% - 20px); /* 2 per row */
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+        color: white;
+    }
+
+    .property img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .property-content {
+        padding: 15px 20px;
+    }
+
+    .property h3 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .property p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #ccc;
+
+
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slideshow-container img.active {
+            display: block;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 5px;
+        }
+
+        .next {
+            right: 5px;
+        }
+
+        .property-info {
+            padding: 15px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 1000px) {
+            .property {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .property {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🏠 Marefiya Property</h1>
+    <nav>
+        <a href="Untitled3.htm#">Home</a>
+        <a href="#property-section">Buy</a>
+        <a href="#property-section">Sell</a>
+        <a href="#property-section">Rent</a>
+        <a href="about.htm#">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    Find Your Dream Home in Ethiopia
+</div>
+
+<div class="container">
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <select id="typeFilter">
+            <option value="">All Types</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="land">Land</option>
+        </select>
+        <select id="bedroomFilter">
+            <option value="">Bedrooms</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+        </select>
+        <input type="number" id="minPrice" placeholder="Min Price">
+        <input type="number" id="maxPrice" placeholder="Max Price">
+        <button id="searchBtn">Search</button>
+    </div>
+                     <!-- Right Side -->
+    <!-- PROPERTY LISTINGS -->
+    <div class="Bole dembel" id="property-section">
+
+        <div class="property" data-type="apartment" data-bedrooms="3" data-price="32000000">
+            <div class="slideshow-container">
+                <img src="c:\Users\alula\Downloads\dealer\New folder\photo_2025-07-08_11-33-39.jpg"/300x200?text=Image+1" class="active">
+                <img src="c:\Users\alula\Downloads\dealer\New folder\photo_2025-07-08_11-33-31.jpg"/300x200?text=Image+2">
+                <img src="c:\Users\alula\Downloads\dealer\New folder\photo_2025-07-08_11-28-20.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder\photo_2025-07-08_11-27-32.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder\photo_2025-07-08_11-27-25.jpg"/300x200?text=Image+3">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <div class="property-info">
+                <h2>Bole Dembel Apartment</h2>
+                <p>3 Bedrooms • 4 Bathrooms • Maids Room • Balcony .Closed Kitchen</p>
+                <p><strong>Price:</strong> 32 Million ETB</p>
+            </div>
+        </div>
+               <!-- Left Side -->
+
+        <div class="property" data-type="house" data-bedrooms="3" data-price="35000000">
+            <div class="slideshow-container">
+                 <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-19.jpg"/300x200?text=Villa+ class="active">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-39.jpg"/300x200?text=Villa+2">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-34.jpg"/300x200?text=Villa+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-29.jpg"/300x200?text=Villa+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-27.jpg"/300x200?text=Villa+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-26.jpg"/300x200?text=Villa+3">             <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-23.jpg"/300x200?text=Villa+
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-19.jpg"/300x200?text=Villa+
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <div class="property-info">
+                <h2>Bole welo sefre</h2>
+                <p> 8th floor.3 Bedroom • 4 Bathroom • maids Room • laundery.1 balcony.235sqm.Digital carta.</p>
+                <p><strong>Price:</strong> 35 Million ETB</p>
+            </div>
+        </div>
+           <div class="Bole dembel" id="property-section">
+
+        <div class="property" data-type="apartment" data-bedrooms="3" data-price="65000000">
+            <div class="slideshow-container">
+                <img src="c:\Users\alula\Downloads\dealer\New folder\photo_2025-07-08_11-33-39.jpg"/300x200?text=Image+1" class="active">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-05-21_12-01-17.jpg"/300x200?text=Image+2">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-05-21_12-01-17 (2).jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-05-21_13-11-45.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-07-09_00-02-50 (2).jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-05-21_12-01-20 (3).jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-07-09_00-02-49 (2).jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-05-21_12-01-18.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-07-09_00-02-38.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-07-09_00-02-48.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-07-09_00-02-46 (2).jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-05-21_13-12-12.jpg"/300x200?text=Image+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (3)\photo_2025-07-09_00-02-46.jpg"/300x200?text=Image+3">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <div class="property-info">
+                <h2>Bole Atlas Apartment</h2>
+                <p>220sqm
+3 bedrooms
+4 bathrooms
+Closed kitchen
+Open kitchen
+Maids room
+Amenities:-
+swimming pool
+ground water
+2 car parking
+2 elevators
+Standby generator
+Steam and sauna
+Gym
+Reception
+Intercom system</p>
+                <p><strong>Price:</strong> 65 Million ETB</p>
+            </div>
+        </div>
+
+        <div class="property" data-type="house" data-bedrooms="3" data-price="35000000">
+            <div class="slideshow-container">
+                 <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-19.jpg"/300x200?text=Villa+ class="active">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-39.jpg"/300x200?text=Villa+2">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-34.jpg"/300x200?text=Villa+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-29.jpg"/300x200?text=Villa+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-27.jpg"/300x200?text=Villa+3">
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-26.jpg"/300x200?text=Villa+3">             <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-23.jpg"/300x200?text=Villa+
+                <img src="c:\Users\alula\Downloads\dealer\New folder (2)\photo_2025-07-08_11-36-19.jpg"/300x200?text=Villa+
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <div class="property-info">
+                <h2>Bole welo sefre</h2>
+                <p> 8th floor.3 Bedroom • 4 Bathroom • maids Room • laundery.1 balcony.235sqm.Digital carta.</p>
+                <p><strong>Price:</strong> 35 Million ETB</p>
+            </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<footer id="contact">
+    <p>📍 Address: Avenue 05, Addis Ababa, Ethiopia</p>
+    <p>📞 Phone: +251937943183</p>
+    <p>✉️ Email:tadebusines@gmail.com</p>
+    <p>&copy; 2025 Marefiya Property. All rights reserved.</p>
+</footer>
+
+<!-- SEARCH FILTER SCRIPT -->
+<script>
+document.getElementById('searchBtn').addEventListener('click', function () {
+    const type = document.getElementById('typeFilter').value.toLowerCase();
+    const bedrooms = parseInt(document.getElementById('bedroomFilter').value) || 0;
+    const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+    const properties = document.querySelectorAll('.property');
+
+    properties.forEach(property => {
+        const propType = property.dataset.type.toLowerCase();
+        const propBedrooms = parseInt(property.dataset.bedrooms);
+        const propPrice = parseInt(property.dataset.price);
+
+        const matchesType = !type || propType === type;
+        const matchesBedrooms = !bedrooms || propBedrooms >= bedrooms;
+        const matchesPrice = propPrice >= minPrice && propPrice <= maxPrice;
+
+        if (matchesType && matchesBedrooms && matchesPrice) {
+            property.style.display = 'flex';
+        } else {
+            property.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<!-- SLIDESHOW SCRIPT -->
+<script>
+document.querySelectorAll('.slideshow-container').forEach(container => {
+    const slides = container.querySelectorAll('img');
+    const prev = container.querySelector('.prev');
+    const next = container.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+        slides.forEach((img, idx) => {
+            img.classList.toggle('active', idx === i);
+        });
+    }
+
+    prev.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+    });
+
+    next.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    });
+});
+</script>
+
+</body>
+</html>
+
